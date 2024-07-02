@@ -7,6 +7,7 @@ on:
         description: '배포할 브랜치 이름'
         required: true
         type: string
+        default: {github.ref_name}
 
 jobs:
   test:
@@ -18,4 +19,4 @@ jobs:
         run: |
           echo "BRANCH: ${{ github.event.inputs.BRANCH }}"
           echo "GITHUB_REF_NAME: ${{ github.ref_name }}"
-          echo "GITHUB_REF: ${{ github.GITHUB_REF }}"
+          echo "GITHUB_REF: ${{ github.ref }}"
